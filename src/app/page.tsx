@@ -1,103 +1,101 @@
-import Image from "next/image";
+'use client';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Mousewheel, EffectFade } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="w-full h-screen overflow-hidden">
+      <Swiper
+        direction="vertical"
+        slidesPerView={1}
+        spaceBetween={0}
+        mousewheel={{
+          sensitivity: 1,
+          thresholdDelta: 50,
+        }}
+        speed={800}
+        effect="fade"
+        modules={[Mousewheel, EffectFade]}
+        className="w-full h-full"
+      >
+        {/* 首页 */}
+        <SwiperSlide className="bg-gradient-to-b from-[#DB2777] to-[#BE185D]">
+          <div className="flex flex-col items-center justify-center h-full text-white p-8">
+            <h1 className="text-4xl font-bold mb-4">CosApp</h1>
+            <p className="text-xl text-center mb-8">您的智能生活助手</p>
+            <div className="relative w-48 h-48 mb-8">
+              {/* <Image
+                src="/app-preview.png"
+                alt="App Preview"
+                fill
+                className="object-contain"
+              /> */}
+            </div>
+            <button className="bg-white text-[#DB2777] px-8 py-3 rounded-full font-bold hover:bg-opacity-90 transition-all">
+              立即下载
+            </button>
+          </div>
+        </SwiperSlide>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        {/* 功能特点 */}
+        <SwiperSlide className="bg-white">
+          <div className="flex flex-col items-center justify-center h-full p-8">
+            <h2 className="text-3xl font-bold mb-8 text-[#DB2777]">核心功能</h2>
+            <div className="grid grid-cols-2 gap-6 w-full max-w-2xl">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-[#DB2777]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">📱</span>
+                </div>
+                <h3 className="font-bold mb-2 text-[#DB2777]">智能助手</h3>
+                <p className="text-gray-600">24小时在线，随时为您服务</p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-[#DB2777]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">⚡</span>
+                </div>
+                <h3 className="font-bold mb-2 text-[#DB2777]">快速响应</h3>
+                <p className="text-gray-600">毫秒级响应，极速体验</p>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+
+        {/* 使用场景 */}
+        <SwiperSlide className="bg-gray-50">
+          <div className="flex flex-col items-center justify-center h-full p-8">
+            <h2 className="text-3xl font-bold mb-8 text-[#DB2777]">使用场景</h2>
+            <div className="space-y-6 w-full max-w-2xl">
+              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="font-bold mb-2 text-[#DB2777]">日常生活</h3>
+                <p className="text-gray-600">智能提醒、日程管理、生活助手</p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="font-bold mb-2 text-[#DB2777]">工作学习</h3>
+                <p className="text-gray-600">文档处理、笔记管理、任务追踪</p>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+
+        {/* 下载页 */}
+        <SwiperSlide className="bg-gradient-to-b from-[#BE185D] to-[#DB2777]">
+          <div className="flex flex-col items-center justify-center h-full text-white p-8">
+            <h2 className="text-3xl font-bold mb-8">立即体验</h2>
+            <div className="space-y-4">
+              <button className="bg-white text-[#DB2777] px-8 py-3 rounded-full font-bold w-full hover:bg-opacity-90 transition-all">
+                App Store 下载
+              </button>
+              <button className="bg-white text-[#DB2777] px-8 py-3 rounded-full font-bold w-full hover:bg-opacity-90 transition-all">
+                Google Play 下载
+              </button>
+            </div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
     </div>
   );
 }
