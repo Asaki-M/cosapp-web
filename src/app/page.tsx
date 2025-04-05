@@ -26,7 +26,7 @@ export default function Home() {
         <SwiperSlide className="bg-gradient-to-b from-[#DB2777] to-[#BE185D]">
           <div className="flex flex-col items-center justify-center h-full text-white p-8">
             <h1 className="text-4xl font-bold mb-4">CosApp</h1>
-            <p className="text-xl text-center mb-8">您的 Cosplay 智能助手</p>
+            <p className="text-xl text-center mb-8">您的 Cosplay 智能应用</p>
             <div className="relative w-[280px] h-[373px] rounded-2xl overflow-hidden group shadow-2xl mb-8 animate-fadeIn">
               <div className="absolute inset-0 rounded-2xl overflow-hidden">
                 <Image
