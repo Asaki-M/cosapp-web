@@ -24,7 +24,7 @@ export default function Home() {
       >
         {/* 首页 */}
         <SwiperSlide className="bg-gradient-to-b from-[#DB2777] to-[#BE185D]">
-          <div className="flex flex-col items-center justify-center h-full text-white p-8">
+          <div className="flex flex-col items-center justify-center h-full text-white p-8 pb-24">
             <h1 className="text-4xl font-bold mb-4">CosApp</h1>
             <p className="text-xl text-center mb-8">您的 Cosplay 智能应用</p>
             <div className="relative w-[280px] h-[373px] rounded-2xl overflow-hidden group shadow-2xl mb-8 animate-fadeIn">
@@ -65,7 +65,7 @@ export default function Home() {
 
         {/* 扫脸转换头模数据 */}
         <SwiperSlide className="bg-[#7e4d98]">
-          <div className="flex flex-col items-center justify-center h-full w-full p-8">
+          <div className="flex flex-col items-center justify-center h-full w-full p-8 pb-24">
             <div className="container mx-auto max-w-6xl h-full flex flex-col justify-center items-center">
               <div className="text-center mb-12 animate-fadeIn">
                 <h2 className="text-4xl text-nowrap font-bold text-white mb-6 tracking-wide">
@@ -79,8 +79,8 @@ export default function Home() {
               </div>
               <div className="relative flex justify-center items-center w-full">
                 <div className="flex justify-center items-center gap-8">
-                  <div className="transform animate-slideUp" style={{ animationDelay: '0.3s' }}>
-                    <div className="relative w-[280px] h-[373px] rounded-2xl overflow-hidden group shadow-2xl bg-white">
+                  <div className="transform opacity-0 translate-y-8 animate-slideUp" style={{ animationDelay: '0.6s' }}>
+                    <div className="relative w-[280px] h-[373px] rounded-2xl overflow-hidden group shadow-2xl">
                       <div className="absolute inset-0 rounded-2xl overflow-hidden">
                         <Image
                           src="/face-model.png"
@@ -103,7 +103,7 @@ export default function Home() {
 
         {/* 照片动漫化展示 */}
         <SwiperSlide className="bg-[#2C3E50]">
-          <div className="flex flex-col items-center justify-center h-full w-full p-8">
+          <div className="flex flex-col items-center justify-center h-full w-full p-8 pb-24">
             <div className="container mx-auto max-w-6xl h-full flex flex-col justify-center items-center">
               <div className="text-center mb-12 animate-fadeIn">
                 <h2 className="text-4xl text-nowrap font-bold text-white mb-6 tracking-wide">
